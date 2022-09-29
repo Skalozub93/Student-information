@@ -10,32 +10,27 @@ namespace Student_information
     {
         private string name;
         private string surname;
-        private int age;
+        private DateTime age = new DateTime();
 
         private DateTime date = new DateTime();
         private string[,,] adress;
         private long phoneNumber;
 
-        public Student() { }
+        public Student() 
+        {
+            name = "Ivan";
+            surname = "Ivanov";
+            age = new DateTime(18);
+        }
         
-        public Student(string name)
-        {
-            this.name = name;
-        }
-
-        public Student(string name,string surname)
-        {
-            this.name = name;
-            this.surname = surname;
-        }
-
-        public Student(string name, string surname, int age)
+        public Student(string name, string surname, DateTime age)
         {
             this.name = name;
             this.surname = surname;
             this.age = age;
         }
 
+        // Setters
 
         public void SetName(string name)
         {
@@ -45,7 +40,7 @@ namespace Student_information
         {
             this.surname = surname;
         }
-        public void SetAge(int age)
+        public void SetAge(DateTime age)
         {
             this.age = age;
         }
@@ -62,7 +57,7 @@ namespace Student_information
             this.phoneNumber = number;
         }
 
-
+        //Getters
 
         public string GetName()
         {
@@ -72,9 +67,9 @@ namespace Student_information
         {
             return this.surname;
         }
-        public int GetAge()
+        public DateTime GetAge()
         {
-            return this.age;
+            return Convert.ToDateTime(this.age);
         }
         public DateTime GetData()
         {

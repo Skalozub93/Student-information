@@ -15,7 +15,8 @@ namespace Student_information
 
             v.SetName("Vlad");
             v.SetSurname("Skalozub");
-            v.SetAge(18);
+            var date1 = new DateTime(2003,12,22,3,0,0);
+            v.SetAge(date1);
 
             Console.WriteLine(v.GetName());
             Console.WriteLine(v.GetSurname());
